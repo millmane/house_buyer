@@ -1,0 +1,34 @@
+/* line 22, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_changes.css.scss */
+.row-width-300 {
+  width: 300px;
+}
+
+/* line 26, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_changes.css.scss */
+#search-container > div > div {
+  padding: 0px;
+}
+
+/* line 30, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_changes.css.scss */
+#filter-bar-dropdown {
+  border-right: solid red 1px;
+}
+
+/* line 34, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_changes.css.scss */
+#custom-filter-bar {
+  padding-left: 120px;
+  background-color: #e2effc;
+  font-weight: bold;
+  z-index: -1;
+}
+
+/* line 41, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_changes.css.scss */
+#custom-filter-bar > div > ul > li > a {
+  border-left: solid red 1px;
+}
+
+/*#nav-changes {
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  color: black;
+}*/

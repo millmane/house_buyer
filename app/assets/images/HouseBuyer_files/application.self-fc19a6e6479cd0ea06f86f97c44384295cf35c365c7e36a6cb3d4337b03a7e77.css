@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+
+
+ */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/assets/glyphicons-halflings-regular-124ca22ba329e9f6c9ccf67da7aeb314304f8b5a85d1c4482f6075439cb31041.eot");
+  src: url("/assets/glyphicons-halflings-regular-124ca22ba329e9f6c9ccf67da7aeb314304f8b5a85d1c4482f6075439cb31041.eot?#iefix") format("embedded-opentype"), url("/assets/glyphicons-halflings-regular-a26394f7ede100ca118eff2eda08596275a9839b959c226e15439557a5a80742.woff") format("woff"), url("/assets/glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf") format("truetype"), url("/assets/glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg#glyphicons_halflingsregular") format("svg");
+}
+/* line 29, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+html, body, #root {
+  height: 100%;
+}
+
+/* line 33, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+#app-div {
+  min-height: 100%;
+}
+
+/* line 37, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+#main {
+  overflow: auto;
+  padding-bottom: 150px;
+  /* this needs to be bigger than footer height*/
+}
+
+/* line 50, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+#navbar-z900 {
+  z-index: 900;
+}
+
+/* line 54, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+.brand-image {
+  margin-top: -15px;
+}
+
+/* line 58, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+#landing-page {
+  background-image: url(/assets/zillow_home_page-4511774aa36aeb5119405647350f02267da41ef0e5836494fcf964ecfffd157c.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 600px;
+  min-height: 600px;
+  height: 600px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* line 73, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+.vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 80, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/application.css.scss */
+.tag-line {
+  margin-top: 100px;
+}

@@ -1,0 +1,138 @@
+/* line 1, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-search-sidebar {
+  position: fixed;
+  top: 104px;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  overflow-y: scroll;
+  background: #f7f7f7;
+}
+
+/* line 12, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+/* line 22, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-img-container {
+  background-color: #cacccd;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 67%;
+}
+
+/* line 28, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-container {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 57, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-container > li {
+  list-style-type: none;
+}
+
+/* line 61, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-details {
+  margin: 0px;
+}
+
+/* line 65, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-details > i {
+  font-size: 7px;
+  vertical-align: middle;
+}
+
+/* line 70, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-address {
+  font-size: 13px;
+  margin: 0px;
+}
+
+/* line 76, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-price {
+  font-size: 28px;
+}
+
+/* line 80, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-caption {
+  background-color: #f7f7f7;
+  padding: 10px;
+  position: relative;
+}
+
+/* line 91, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-caption > h4 {
+  margin: 0px;
+}
+
+/* line 95, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-item-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 104, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index {
+  height: 700px;
+  border: solid red 5px;
+  overflow: scroll;
+}
+
+/* line 110, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index > ul {
+  list-style-type: none;
+}
+
+/* line 114, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.map {
+  top: 52px;
+  display: block;
+  width: 40%;
+  position: fixed;
+  right: 0;
+  left: auto;
+  bottom: 0;
+}
+
+/* line 124, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-search-map {
+  top: 52px;
+  display: block;
+  width: 40%;
+  position: fixed;
+  right: 0;
+  left: auto;
+  bottom: 0;
+}
+
+/* line 135, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+#map-container-search {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 148, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.map-search {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 154, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.left-half-search {
+  float: left;
+}
+
+/* line 184, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/search.css.scss */
+.house-index-container {
+  padding: 0 20px;
+}

@@ -11,6 +11,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'bcrypt'
 gem 'autoprefixer-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-rails'

@@ -1,0 +1,86 @@
+/* line 2, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-rights {
+  background-color: #333;
+  color: #999;
+  border-top: 1px solid #1b1b1b;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  margin-top: 22px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* line 13, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-social-network {
+  padding: 0px;
+  display: block;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* line 20, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-social-network > li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px;
+  font-size: 10pt;
+}
+
+/* line 27, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-social-network > li:hover {
+  color: white;
+}
+
+/* line 31, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-icon {
+  color: #777;
+}
+
+/* line 35, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-icon:hover {
+  color: white;
+}
+
+/* line 39, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-icon-rounded {
+  padding-top: 10px;
+  color: #777;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #525252;
+}
+
+/* line 51, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-icon-rounded:hover {
+  background-color: #525252;
+  color: #fff;
+  border-color: #525252;
+}
+
+/* line 57, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+#app-footer {
+  color: #777;
+  background: #222;
+  border-top: 2px solid #444;
+  padding: 44px 0 0 0;
+}
+
+/* line 70, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-logo {
+  margin-bottom: 22px;
+}
+
+/* line 74, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-widget {
+  margin-bottom: 22px;
+}
+
+/* line 78, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/footer.css.scss */
+.footer-widget > h3 {
+  color: #ddd;
+  font-weight: 300;
+}

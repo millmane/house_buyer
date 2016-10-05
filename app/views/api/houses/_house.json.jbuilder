@@ -1,0 +1,11 @@
+json.extract! house,
+ :id,
+ :description,
+ :lat,
+ :lng,
+ :price,
+ :picture_url,
+ :user,
+ :beds,
+ :baths,
+ :area

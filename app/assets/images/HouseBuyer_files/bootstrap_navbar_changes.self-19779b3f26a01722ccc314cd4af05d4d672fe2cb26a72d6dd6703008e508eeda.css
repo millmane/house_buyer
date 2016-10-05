@@ -1,0 +1,111 @@
+/* navbar */
+/* line 3, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar {
+  margin-bottom: 0px;
+}
+
+/* line 7, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.nav-text {
+  padding: 15px;
+}
+
+/* line 11, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  border-color: #E7E7E7;
+  border-radius: 0px;
+  z-index: 1000;
+}
+
+/* title */
+/* line 19, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-brand {
+  color: #777;
+}
+
+/* line 22, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #5E5E5E;
+}
+
+/* link */
+/* line 28, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > li > a {
+  color: black;
+}
+
+/* line 31, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #7BC0FF;
+}
+
+/* line 35, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #E7E7E7;
+}
+
+/* line 41, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #D5D5D5;
+}
+
+/* caret */
+/* line 48, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+
+/* line 52, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333;
+  border-bottom-color: #333;
+}
+
+/* line 57, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  border-top-color: #555;
+  border-bottom-color: #555;
+}
+
+/* mobile version */
+/* line 64, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-toggle {
+  border-color: #DDD;
+}
+
+/* line 67, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #DDD;
+}
+
+/* line 71, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #CCC;
+}
+
+@media (max-width: 767px) {
+  /* line 75, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  /* line 78, /Users/ericmillman/Documents/Projects/house_buyer/app/assets/stylesheets/bootstrap_navbar_changes.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+  }
+}
