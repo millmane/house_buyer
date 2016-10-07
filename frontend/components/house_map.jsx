@@ -102,16 +102,17 @@ import MarkerManager from '../util/marker_manager';
         this.props.updateFilter('mapOptions', options);
       });
 
-      google.maps.event.addListener(this.map, 'click', event => {
-        const coords = _getCoordsObj(event.latLng);
-        // console.log(this.geocodeLatLng(this.geocoder, this.infowindow));
-        // const address = this.geocodeLatLng(this.geocoder, this.infowindow).formatted_address;
-        // const query = {
-        //   coords,
-        //   address
-        // }
-        this._handleClick(coords);
-      });
+      // UNCOMMENT THIS TO ALLOW USERS TO CLICK THE MAP TO ADD A HOUSE
+      // google.maps.event.addListener(this.map, 'click', event => {
+      //   const coords = _getCoordsObj(event.latLng);
+      //   // console.log(this.geocodeLatLng(this.geocoder, this.infowindow));
+      //   // const address = this.geocodeLatLng(this.geocoder, this.infowindow).formatted_address;
+      //   // const query = {
+      //   //   coords,
+      //   //   address
+      //   // }
+      //   this._handleClick(coords);
+      // });
     }
 
     geocodeLatLng(geocoder, infowindow, coords, router) {

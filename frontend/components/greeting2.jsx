@@ -1,35 +1,78 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter, hashHistory} from 'react-router';
-import { Nav, NavItem } from 'react-bootstrap'
+import { Nav, NavItem } from 'react-bootstrap';
+import SessionFormContainer from './session_form_container';
+import Modal from 'react-modal';
+
 class Greeting2 extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(props) {
+  super(props)
+  this.state = {
+    modalIsOpen: false
+  }
+
+  this.customStyles = {
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)',
+        backgroundColor      : '#222a3f',
+        color                 : '#d5e1ef'
+    }
+  }
+  this.openModal = this.openModal.bind(this)
+  this.closeModal = this.closeModal.bind(this)
+  this.handleLogout = this.handleLogout.bind(this)
+}
+
+  handleLogout(){
+    this.closeModal();
+    this.props.logout();
+  }
+
+  openModal(){
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal(){
+    this.setState({modalIsOpen: false});
   }
 
   componentDidUpdate(){
-    this.redirectIfLoggedOut();
+    // if (currentUser)
+
+    // this.redirectIfLoggedOut();
   }
 
   redirectIfLoggedOut(){
     if (!this.props.currentUser){
-      this.props.router.push("/login");
+      // this.props.router.push("/login");
     }
   }
 
   sessionLinks(){
     return (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/login">Log In</Link></li>
-        <li><Link to="/signup">Sign Up</Link></li>
+        <li><a onClick={this.openModal}>Log In</a></li>
+        <li><a onClick={this.openModal}>Signup</a></li>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={this.customStyles} >
+          <SessionFormContainer closeModal={this.closeModal}/>
+        </Modal>
       </ul>
     )
   };
 
-  personalGreeting(currentUser, logout){
+  personalGreeting(currentUser){
     return (
       <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/" onClick={logout}>Log Out</Link></li>
+        <li><Link to="/" onClick={this.handleLogout}>Log Out</Link></li>
         <li className="nav-text">Welcome, {currentUser.username}</li>
       </ul>
     )
@@ -37,7 +80,8 @@ class Greeting2 extends React.Component {
 
   render(){
     if (this.props.currentUser){
-      return this.personalGreeting(this.props.currentUser, this.props.logout);
+      // this.closeModal()
+      return this.personalGreeting(this.props.currentUser);
     } else {
       return this.sessionLinks();
     }
