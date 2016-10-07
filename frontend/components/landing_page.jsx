@@ -93,7 +93,7 @@ class LandingPage extends React.Component {
         <div className="jumbotron" id="landing-page">
           <div className="container>">
             <h1 className="tag-line">Find Your House</h1>
-            <h4>Search around the world to find an investment property. Your perfect place is waiting.</h4>
+            <h4>test Search around the world to find an investment property. Your perfect place is waiting.</h4>
               <form className="form-inline landing-page-form"
                 onSubmit={this.handleSubmit()}>
                 <div className="form-group landing-page-form-group">
