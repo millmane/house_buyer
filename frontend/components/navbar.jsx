@@ -19,10 +19,8 @@ const NavBar = () => (
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
         </button>
+        <Link className="navbar-brand" to="/">HouseBuyer</Link>
 
-        <Link className="navbar-brand" to="/">
-          <img alt="Brand" className="brand-image" src="assets/50x50.png"/>
-        </Link>
       </div>
 
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,3 +36,6 @@ const NavBar = () => (
 );
 
 export default NavBar;
+// <Link className="navbar-brand" to="/">
+//   <img alt="Brand" className="brand-image" src="assets/50x50.png"/>
+// </Link>

@@ -10,7 +10,7 @@ const Footer = function() {
 
     				<div className="col-sm-4">
     					<div className="footer-widget">
-                <img alt="footer-logo" src="assets/100x100.png"/>
+                <h3>HouseBuyer</h3>
     						<p>
                   HouseBuyer is a website that helps users research investment properties. We give you the tools to find the right houses, suggest similar places for you to look at, and provide powerful investment tools. We love what we do and we hope you do too!
                 </p>
