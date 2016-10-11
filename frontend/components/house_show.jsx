@@ -81,6 +81,8 @@ class HouseShow extends React.Component{
 
   componentDidUpdate(){
 
+
+
     // console.log(this.props.houseLat);
     // console.log(this.props.house.price_history)
 

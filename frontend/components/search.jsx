@@ -7,7 +7,8 @@ import HouseIndex from './house_index';
 import HouseMap from './house_map';
 import FilterForm from './filter_form';
 import FilterBar from './filter_bar';
-import Footer from './footer'
+import Footer from './footer';
+
 //
 // class Search extends React.Component {
 //   componentDidMount(){

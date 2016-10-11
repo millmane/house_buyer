@@ -34,6 +34,7 @@
     "bootstrap-loader": "^1.2.0",
     "bootstrap-sass-loader": "^1.0.10",
     "chart.js": "^1.1.1",
+    "cloudinary": "^1.4.3",
     "css-loader": "^0.25.0",
     "d3-time-format": "^2.0.2",
     "jquery": "^3.1.0",

@@ -266,7 +266,6 @@ import MarkerManager from '../util/marker_manager';
     }
 
     render(){
-      console.log(this.props.mapOptions);
       return (
         <div id="map-container-search" ref="map"></div>
       )
