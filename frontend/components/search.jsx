@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import ReactDOM from 'react-dom'
 
 //Components
@@ -71,6 +71,8 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
+        this.props.requestHouses();
+
     // console.log(this.refs);
     // console.log(this.refs.housemap);
     // console.log(this.refs.search);
@@ -118,8 +120,8 @@ class Search extends React.Component{
   render(){
     return(
       <div id="house-search-container" ref="search" onMouseOver={this.onMouseOver}>
-
         <div className="house-search-sidebar">
+
           <FilterForm
             minPrice={this.props.minPrice}
             maxPrice={this.props.maxPrice}

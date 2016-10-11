@@ -61,7 +61,6 @@ export default class Chart extends React.Component{
     //   width: window.innerWidth - 30
     // });
 
-    console.log(this.refs.chartRef.clientHeight);
     this.setState({
       width: this.refs.chartRef.clientWidth,
       height: (9 / 16) * this.refs.chartRef.clientWidth

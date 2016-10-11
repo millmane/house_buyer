@@ -49,7 +49,11 @@ import MarkerManager from '../util/marker_manager';
         //   center: {lat: this.props.houseLat, lng: this.props.houseLng},
         //   draggable: false
         // })
-        this.props.requestHouse(this.props.houseId);
+        // const options = this.props.mapOptions
+        // this.props.updateFilter('mapOptions', this.props.mapOptions);
+        // this._registerListeners();
+
+        // this.props.requestHouse(this.props.houseId);
       } else {
         this.props.markerSaver(this.MarkerManager)
 
@@ -60,11 +64,17 @@ import MarkerManager from '../util/marker_manager';
     }
 
     componentWillReceiveProps(nextProps){
-      // console.log("next props");
-      // console.log(nextProps);
+
     }
 
     componentDidUpdate(){
+      // this._removeListeners()
+      // this._registerListeners();
+
+
+      if(this.props.singleHouse){
+        // this.props.updateFilter('mapOptions', this.props.mapOptions);
+      }
 
       this.map.setOptions(this.props.mapOptions);
 
@@ -75,20 +85,71 @@ import MarkerManager from '../util/marker_manager';
 
     }
 
+    componentWillUnmount(){
+      this._removeListeners()
+    }
+
+    _removeListeners(){
+      google.maps.event.clearListeners(this.map, 'idle');
+    }
+
+
     _registerListeners() {
+      // google.maps.event.addListener(this.map, 'bounds_changed', () => {
+      //   const mapBounds = this.map.getBounds();
+      //   const northEast = _getCoordsObj(mapBounds.getNorthEast());
+      //   const southWest = _getCoordsObj(mapBounds.getSouthWest());
+      //   const bounds = { northEast, southWest };
+      //   this.props.updateFilter('bounds', bounds);
+      //
+      // })
+
       google.maps.event.addListener(this.map, 'idle', () => {
         const mapBounds = this.map.getBounds();
         const northEast = _getCoordsObj(mapBounds.getNorthEast());
         const southWest = _getCoordsObj(mapBounds.getSouthWest());
         const bounds = { northEast, southWest };
-        const center = {
-          lat: this.map.getCenter().lat(),
-          lng: this.map.getCenter().lng()
-        };
-        const zoom = this.map.getZoom();
-        const options = {
-          center,
-          zoom
+        // const center = {
+        //   lat: this.map.getCenter().lat(),
+        //   lng: this.map.getCenter().lng()
+        // };
+        // const zoom = this.map.getZoom();
+        // const options = {
+        //   center: center,
+        //   zoom
+        // }
+        let center = {}
+        let zoom = 13
+        let options = {}
+
+        if(this.props.singleHouse){
+
+          center = {
+            lat: this.props.houseLat,
+            lng: this.props.houseLng
+          };
+          // console.log(center);
+          options = {
+            center: center,
+            zoom: 13,
+            draggable: false,
+            scrollwheel: false,
+
+          }
+        } else {
+          center = {
+            lat: this.map.getCenter().lat(),
+            lng: this.map.getCenter().lng()
+          };
+          zoom = this.map.getZoom();
+          options = {
+            center: center,
+            zoom: zoom,
+            draggable: true,
+            scrollwheel: true,
+
+          }
+
         }
         // let clat = (southWest.lat + northEast.lat)/2
         // let clng = (southWest.lng + northEast.lng)/2
@@ -97,7 +158,6 @@ import MarkerManager from '../util/marker_manager';
         //   center: {lat: clat, lng: clng},
         //   zoom: 13
         // })
-
         this.props.updateFilter('bounds', bounds);
         this.props.updateFilter('mapOptions', options);
       });
@@ -167,6 +227,13 @@ import MarkerManager from '../util/marker_manager';
     _handleMarkerClick(marker, house){
 
       let infoWindow = new google.maps.InfoWindow();
+      let options = {
+        lat: house.lat,
+        lng: house.lng,
+        draggable: false
+      }
+      // this.props.updateFilter('mapOptions', options);
+
       let redirect = function () {
         this.props.router.push("houses/" + house.id );
       }

@@ -8,6 +8,7 @@ import Chart    from './chart.jsx';
 import d3 from 'd3';
 
 const HouseDetail = ({house}) => {
+  // const houses = {[props.houseId]: house};
 
   let owner = "No Owner"
   if (house.user) {

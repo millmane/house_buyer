@@ -26,7 +26,8 @@ class HouseIndexItem extends React.Component{
 		// console.log(ReactDOM.findDOMNode(this));
 	}
 	handleClick(house){
-		hashHistory.push("/houses/" + house.id);
+		this.props.router.push("/houses/" + house.id)
+		// hashHistory.push("/houses/" + house.id);
 	}
 
 	onMouseEnter(){
@@ -74,7 +75,7 @@ class HouseIndexItem extends React.Component{
 	}
 }
 
-export default HouseIndexItem;
+export default withRouter(HouseIndexItem);
 
 // const handleClick = (house) => {
 // 	hashHistory.push("/houses/" + house.id);
