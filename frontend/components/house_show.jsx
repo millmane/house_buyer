@@ -127,15 +127,6 @@ class HouseShow extends React.Component{
         <div className="container-fluid">
           <div className="row house-show-row-top">
             <div className="col-md-6">
-              <HouseDetail house={this.props.house}/>
-            </div>
-            <div className="col-md-6">
-              <Chart data={this.props.house.price_history || {}}/>
-            </div>
-          </div>
-
-          <div className="row house-show-row-bottom">
-            <div className="col-md-6">
               <img className="house-detail-image" src={this.props.house.picture_url}/>
             </div>
             <div className="col-md-6">
@@ -152,6 +143,16 @@ class HouseShow extends React.Component{
                   updateMapOptions={this.props.updateMapOptions}
                   />
               </div>
+            </div>
+
+          </div>
+
+          <div className="row house-show-row-bottom">
+            <div className="col-md-6">
+              <HouseDetail house={this.props.house}/>
+            </div>
+            <div className="col-md-6">
+              <Chart data={this.props.house.price_history || {}}/>
             </div>
           </div>
         </div>
