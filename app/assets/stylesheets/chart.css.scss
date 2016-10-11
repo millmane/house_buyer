@@ -1,0 +1,55 @@
+// #222a3f
+// #566780
+// #d5e1ef
+// #f6f5f3
+// #948f8c
+.chart-title {
+  color: #d5e1ef;
+}
+ .line {
+   fill: none;
+   stroke: #d5e1ef;
+   stroke-width: 1.5px;
+ }
+ .axis path,
+ .axis line {
+     fill: none;
+     stroke: #d5e1ef;
+     shape-rendering: crispEdges;
+  }
+
+  // .axis text {
+  //   color: red;
+  // }
+
+  .x.axis path {
+    display: none;
+  }
+
+.chart-container {
+  font: 10px sans-serif;
+  // background-color: #f6f5f3;
+
+}
+// .chart {
+//   color: yellow;
+//   border: solid 5px green;
+//   background-color: red;
+// }
+.scatter {
+  // background-color: #f6f5f3;
+  padding: 10px;
+  border: 1px solid #f6f5f3;
+  stroke: #d5e1ef;
+  font: 12px sans-serif;
+  // width: 400px;
+  // height: 400px;
+}
+.path {
+  width: 200px;
+  height: 200px;
+}
+.path-container {
+  width: 200px;
+  height: 200px;
+}

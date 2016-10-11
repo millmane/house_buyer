@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 import HouseMap from './house_map';
 import HouseDetail from './house_detail';
 import Footer from './footer';
+import Chart    from './chart.jsx';
+
+
 // import ReviewButton from './review_button';
 //
 // class HouseShow extends React.Component {
@@ -46,6 +49,12 @@ const HouseShow = function({house, houseId, houseLat, houseLng, requestHouse, ch
     scrollwheel: false,
     zoom: 13
   }
+
+  let data2 = {}
+  if (house.price_history) {
+    data2 = house.price_history;
+  }
+
   return(
     <div className="house-show-container">
       <div className="container-fluid">
@@ -54,7 +63,19 @@ const HouseShow = function({house, houseId, houseLat, houseLng, requestHouse, ch
             <h1>Property Details</h1>
           </div>
         </div>
-        <div className="row">
+      </div>
+
+      <div className="container-fluid">
+        <div className="row house-show-row-top">
+          <div className="col-md-6">
+            <HouseDetail house={house}/>
+          </div>
+          <div className="col-md-6">
+            <Chart data={data2}/>
+          </div>
+        </div>
+
+        <div className="row house-show-row-bottom">
           <div className="col-md-6">
             <img className="house-detail-image" src={house.picture_url}/>
           </div>
@@ -72,16 +93,42 @@ const HouseShow = function({house, houseId, houseLat, houseLng, requestHouse, ch
             </div>
           </div>
         </div>
-          <HouseDetail house={house} />
-        </div>
-
-        <Footer/>
-
       </div>
+      <Footer/>
+    </div>
   );
 };
 
 export default HouseShow;
+
+// <div className="row house-show-row">
+//   <div className="col-md-6">
+//     <HouseDetail house={house}/>
+//   </div>
+//   <div className="col-md-6">
+//     <img className="house-detail-image" src={house.picture_url}/>
+//   </div>
+// </div>
+//
+//   <div className="row house-show-row">
+//     <div className="col-md-6">
+//       <div className="house-show-map">
+//         <HouseMap
+//           houses={houses}
+//           houseId={houseId}
+//           houseLat={houseLat}
+//           houseLng={houseLng}
+//           requestHouse={requestHouse}
+//           singleHouse={true}
+//           mapOptions={mapOptions}
+//           />
+//       </div>
+//     </div>
+//   </div>
+
+
+
+
 // <div className="content-split-title">
 //   <span>additional information</span>
 // </div>

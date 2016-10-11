@@ -8,6 +8,10 @@
 //   width: 100%;
 // }
 
+.house-detail-li {
+    text-transform: capitalize;
+}
+
 .house-detail-image {
   height: 500px;
   // height: 100%;
@@ -16,13 +20,10 @@
 
 .house-show-map {
   width: 100%;
-  // height: 100%;
-
   height: 500px;
-}
 
-.house-show-row {
-  height: 500px;
+  // width: 200px;
+  // height: 200px;
 }
 
 .content-split-title {
@@ -40,16 +41,37 @@
 }
 
 .house-detail-container {
-  background-color: #d5e1ef;
-  color: #222a3f;
-  margin-top: 15px;
-  padding: 10px 0px;
+  background-color: #222a3f;
+  color: #d5e1ef;
+  // padding: 0px 20px;
 }
 
 .house-show-container {
-  background-color: #f6f5f3;
+  color: #f6f5f3;
+  background-color: #222a3f;
 }
 
 .house-show-header {
+  background-color: #222a3f;
+  color: #d5e1ef;
+}
+
+.house-show-row-top {
+  color: #d5e1ef;
+  margin-bottom: 15px;
+
+}
+.house-show-row-bottom {
   background-color: #f6f5f3;
+  padding: 15px 0px;
+}
+
+.house-show-row-container {
+  // padding: 0 30px;
+  // background-color: #f6f5f3;
+}
+
+.house-detail-space-col {
+  width: 33.33%;
+  float: left;
 }

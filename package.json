@@ -7,7 +7,7 @@
     "test": "test"
   },
   "engines": {
-    "node":"6.3.1",
+    "node": "6.3.1",
     "npm": "3.10.3"
   },
   "scripts": {
@@ -33,10 +33,14 @@
     "bootstrap": "^3.3.7",
     "bootstrap-loader": "^1.2.0",
     "bootstrap-sass-loader": "^1.0.10",
+    "chart.js": "^1.1.1",
     "css-loader": "^0.25.0",
+    "d3-time-format": "^2.0.2",
     "jquery": "^3.1.0",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",
+    "react-chartjs": "^0.8.0",
+    "react-d3-basic": "^1.6.11",
     "react-dom": "^15.3.1",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",

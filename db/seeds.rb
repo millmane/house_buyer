@@ -1,5 +1,6 @@
 House.delete_all
 User.delete_all
+Price.delete_all
 
 User.create!(
   username: "guest",
@@ -36,6 +37,42 @@ picture_urls = [
   "http://res.cloudinary.com/millmane/image/upload/v1475261964/house_buyer/seed/pexels-photo-25483.jpg",
   "http://res.cloudinary.com/millmane/image/upload/v1475261952/house_buyer/seed/pexels-photo-42152.jpg"
 ]
+def randomPriceData()
+  data = [];
+  volatility = 0.1
+  old_price = rand(1000..10000)
+
+  (0..100).each do |i|
+    rnd = rand(0..1.0)
+    change_percent = 2 * volatility * rnd
+    if (change_percent > volatility) then
+      change_percent -= (2 * volatility)
+    end
+    change_amount = old_price * change_percent
+    new_price = (old_price + change_amount).round(2)
+    old_price = new_price
+    data << new_price
+  end
+
+  return data
+end
+
+def rand_time(from, to=Time.now.to_date)
+  Time.at(rand_in_range(from.to_f, to.to_f))
+end
+
+(0...picture_urls.length).each do |i|
+  price_history = randomPriceData
+  price_history.each_with_index do |p, j|
+    Price.create!(
+    date: j.days.ago,
+    price: p,
+    house_id: i + 1
+    )
+  end
+end
+
+
 (0...picture_urls.length).each do |i|
   House.create!(
     # description: "House#{i}",
