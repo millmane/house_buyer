@@ -31,10 +31,11 @@ class FilterForm extends React.Component {
     }
 
     const options = {
-      center,
+      center: center,
       zoom: 13
     }
-    this.props.updateFilter("mapOptions", options)
+    this.props.updateMapOptions(options)
+    // this.props.updateFilter("mapOptions", options)
   }
 
   render(){

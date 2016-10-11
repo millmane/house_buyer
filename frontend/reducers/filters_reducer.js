@@ -34,7 +34,6 @@ const FiltersReducer = function(state = _defaultBounds, action){
       const newFilter = {[action.filter]: action.value};
       return merge({}, state, newFilter);
     case FilterConstants.UPDATE_MAP_OPTIONS:
-    console.log("map options updated");
       const newOptions = {mapOptions: action.options};
       return merge({}, state, newOptions);
     default:

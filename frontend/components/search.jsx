@@ -131,7 +131,8 @@ class Search extends React.Component{
             maxBaths={this.props.maxBaths}
             minArea={this.props.minArea}
             maxArea={this.props.maxArea}
-            updateFilter={this.props.updateFilter}/>
+            updateFilter={this.props.updateFilter}
+            updateMapOptions={this.props.updateMapOptions}/>
           <HouseIndex
             ref="houseindex"
             houses={this.props.houses}
@@ -146,7 +147,9 @@ class Search extends React.Component{
             mapOptions={this.props.mapOptions}
             houses={this.props.houses}
             updateFilter={this.props.updateFilter}
-            singleHouse={false}/>
+            singleHouse={false}
+            updateMapOptions={this.props.updateMapOptions}
+            />
         </div>
       </div>
     )

@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import Search from './search';
 //Actions
 import { requestHouses } from '../actions/house_actions';
-import { updateBounds } from '../actions/filter_actions';
-import { updateFilter } from '../actions/filter_actions';
+import { updateFilter, updateMapOptions, updateBounds } from '../actions/filter_actions';
 
 
 const mapStateToProps = state => ({
@@ -24,7 +23,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   requestHouses: () => dispatch(requestHouses()),
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  updateMapOptions: options => dispatch(updateMapOptions(options))
   // updateBounds: (bounds) => dispatch(updateBounds(bounds))
 });
 

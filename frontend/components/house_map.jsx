@@ -139,12 +139,7 @@ import MarkerManager from '../util/marker_manager';
             scrollwheel: false,
 
           }
-          this.props.updateMapOptions({
-            center: {
-              lat: this.props.houseLat,
-              lng: this.props.houseLng
-            }
-          })
+          this.props.updateMapOptions(options)
         } else {
           center = {
             lat: this.map.getCenter().lat(),
@@ -158,8 +153,10 @@ import MarkerManager from '../util/marker_manager';
             scrollwheel: true,
 
           }
+          this.props.updateMapOptions(options)
+
           this.props.updateFilter('bounds', bounds);
-          this.props.updateFilter('mapOptions', options);
+          // this.props.updateFilter('mapOptions', options);
 
         }
         // let clat = (southWest.lat + northEast.lat)/2
