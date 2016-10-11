@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import HouseShow from './house_show';
 // Actions
 import { requestHouse } from '../actions/house_actions';
-import { updateFilter } from '../actions/filter_actions';
+import { updateFilter, updateMapOptions } from '../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const houseId = parseInt(ownProps.params.houseId);
@@ -28,7 +28,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   requestHouse: id => dispatch(requestHouse(id)),
   requestHouses: () => dispatch(requestHouses()),
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  updateMapOptions: options => dispatch(updateMapOptions(options))
 
 });
 

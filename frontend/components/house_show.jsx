@@ -53,12 +53,25 @@ class HouseShow extends React.Component{
       zoom: 13
     }
 
+    // this.mapOptions = {
+    //   center: {lat: 30, lng: 30},
+    //   draggable: false,
+    //   scrollwheel: false,
+    //   zoom: 13
+    // }
+
     // console.log(this.props.house.priceHistory);
     // this.houses = {[this.props.houseId]: this.props.house};
     // console.log(this.props);
   }
 
   componentDidMount(){
+    // this.mapOptions = {
+    //   center: {lat: this.props.houseLat, lng: this.props.houseLng},
+    //   draggable: false,
+    //   scrollwheel: false,
+    //   zoom: 13
+    // }
     // console.log(this.props.houseId);
     this.props.requestHouse(this.props.houseId);
     // console.log(this.props.mapOptions);
@@ -82,12 +95,13 @@ class HouseShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    this.mapOptions = {
-      center: {lat: nextProps.houseLat, lng: nextProps.houseLng},
-      draggable: false,
-      scrollwheel: false,
-      zoom: 13
-    }
+
+    // this.mapOptions = {
+    //   center: {lat: nextProps.houseLat, lng: nextProps.houseLng},
+    //   draggable: false,
+    //   scrollwheel: false,
+    //   zoom: 13
+    // }
 
     // this.props.updateFilter('mapOptions', this.mapOptions);
     // this.props.updateFilter('mapOptions', this.mapOptions);
@@ -98,7 +112,6 @@ class HouseShow extends React.Component{
   }
 
   render(){
-    console.log(this.mapOptions);
     return(
       <div className="house-show-container">
         <div className="container-fluid">
@@ -133,7 +146,8 @@ class HouseShow extends React.Component{
                   requestHouse={this.props.requestHouse}
                   updateFilter={this.props.updateFilter}
                   singleHouse={true}
-                  mapOptions={this.mapOptions}
+                  mapOptions={this.props.mapOptions}
+                  updateMapOptions={this.props.updateMapOptions}
                   />
               </div>
             </div>

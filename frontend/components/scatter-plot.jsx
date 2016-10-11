@@ -9,7 +9,9 @@ const xMax = (data) => d3.extent(data, (d) => {return new Date(d.date)}
 );
 // Returns the highest Y coordinate from the data set
 // const yMax   = (data)  => d3.max(data, (d) => d[1]);
-const yMax = (data) => d3.extent(data, (d) => d.price);
+const yMax   = (data)  => d3.max(data, (d) => d.price);
+
+// const yMax = (data) => d3.extent(data, (d) => d.price);
 
 // Returns a function that "scales" X coordinates from the data to fit the chart
 // const xScale = (props) => {
@@ -33,7 +35,7 @@ const xScale = (props) => {
 
 const yScale = (props) => {
   return d3.scale.linear()
-    .domain(yMax(props.data))
+    .domain([0,yMax(props.data)])
     .range([props.height - props.padding, 10]);
 };
 

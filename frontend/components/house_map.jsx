@@ -45,6 +45,8 @@ import MarkerManager from '../util/marker_manager';
       this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
 
       if(this.props.singleHouse){
+        this._registerListeners();
+
         // this.map.setOptions({
         //   center: {lat: this.props.houseLat, lng: this.props.houseLng},
         //   draggable: false
@@ -68,6 +70,7 @@ import MarkerManager from '../util/marker_manager';
     }
 
     componentDidUpdate(){
+
       // this._removeListeners()
       // this._registerListeners();
 
@@ -136,6 +139,12 @@ import MarkerManager from '../util/marker_manager';
             scrollwheel: false,
 
           }
+          this.props.updateMapOptions({
+            center: {
+              lat: this.props.houseLat,
+              lng: this.props.houseLng
+            }
+          })
         } else {
           center = {
             lat: this.map.getCenter().lat(),
@@ -149,6 +158,8 @@ import MarkerManager from '../util/marker_manager';
             scrollwheel: true,
 
           }
+          this.props.updateFilter('bounds', bounds);
+          this.props.updateFilter('mapOptions', options);
 
         }
         // let clat = (southWest.lat + northEast.lat)/2
@@ -158,8 +169,7 @@ import MarkerManager from '../util/marker_manager';
         //   center: {lat: clat, lng: clng},
         //   zoom: 13
         // })
-        this.props.updateFilter('bounds', bounds);
-        this.props.updateFilter('mapOptions', options);
+
       });
 
       // UNCOMMENT THIS TO ALLOW USERS TO CLICK THE MAP TO ADD A HOUSE

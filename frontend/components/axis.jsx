@@ -13,13 +13,27 @@ export default class Axis extends React.Component {
   renderAxis() {
     var node  = this.refs.axis;
     var axis = d3.svg.axis()
-    .orient(this.props.orient)
-    .ticks(this.props.ticks)
-    .scale(this.props.scale);
-    d3.select(node).call(axis)
-    if (this.props.label) {
-      this.props.label(d3.select(node))
+
+    if (this.props.className === "x axis") {
+      axis.orient(this.props.orient)
+      .ticks(d3.time.months, 6)
+      .tickFormat(d3.time.format("%b %Y"))
+      .scale(this.props.scale);
+      d3.select(node).call(axis)
+      if (this.props.label) {
+        this.props.label(d3.select(node))
+      }
+    } else {
+      axis.orient(this.props.orient)
+      .ticks(this.props.ticks)
+      .scale(this.props.scale);
+      d3.select(node).call(axis)
+      if (this.props.label) {
+        this.props.label(d3.select(node))
+      }
+
     }
+
   }
 
   render() {

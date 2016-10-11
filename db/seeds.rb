@@ -39,10 +39,10 @@ picture_urls = [
 ]
 def randomPriceData()
   data = [];
-  volatility = 0.1
+  volatility = 0.02
   old_price = rand(1000..10000)
 
-  (0..100).each do |i|
+  (0..(365*3)).each do |i|
     rnd = rand(0..1.0)
     change_percent = 2 * volatility * rnd
     if (change_percent > volatility) then
@@ -65,7 +65,7 @@ end
   price_history = randomPriceData
   price_history.each_with_index do |p, j|
     Price.create!(
-    date: j.days.ago,
+    date: (j).days.ago,
     price: p,
     house_id: i + 1
     )

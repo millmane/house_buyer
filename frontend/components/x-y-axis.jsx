@@ -7,7 +7,8 @@ export default (props) => {
     translate: `translate(0, ${props.height - props.padding})`,
     scale: props.xScale,
     orient: 'bottom',
-    ticks: props.width / 150,
+    // ticks: props.width / 150,
+    ticks: 20,
     text: "xaxis",
     className: "x axis"
   };

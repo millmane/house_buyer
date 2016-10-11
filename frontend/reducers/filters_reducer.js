@@ -31,9 +31,12 @@ const _defaultBounds = Object.freeze({
 const FiltersReducer = function(state = _defaultBounds, action){
   switch(action.type){
     case FilterConstants.UPDATE_FILTER:
-    console.log(state);
       const newFilter = {[action.filter]: action.value};
       return merge({}, state, newFilter);
+    case FilterConstants.UPDATE_MAP_OPTIONS:
+    console.log("map options updated");
+      const newOptions = {mapOptions: action.options};
+      return merge({}, state, newOptions);
     default:
       return state
   }
