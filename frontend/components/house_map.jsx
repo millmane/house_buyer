@@ -34,7 +34,6 @@ import MarkerManager from '../util/marker_manager';
     }
 
     componentDidMount(){
-
       this.mapOptions = this.props.mapOptions || {}
       // this.mapOptions = {
       //   center: this.props.mapOptions.center,
@@ -42,7 +41,7 @@ import MarkerManager from '../util/marker_manager';
       // }
       const mapDOMNode = this.refs.map
       this.map = new google.maps.Map(mapDOMNode, this.mapOptions);
-      this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
+      this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this), this.props.receiveMarkers);
 
       if(this.props.singleHouse){
         this._registerListeners();
@@ -61,7 +60,7 @@ import MarkerManager from '../util/marker_manager';
 
         // this.map.setOptions(this.mapOptions)
         this._registerListeners();
-        // this.MarkerMan ager.updateMarkers(this.props.houses);
+        // this.MarkerManager.updateMarkers(this.props.houses);
       }
     }
 
@@ -153,9 +152,9 @@ import MarkerManager from '../util/marker_manager';
             scrollwheel: true,
 
           }
+          this.props.updateFilter('bounds', bounds);
           this.props.updateMapOptions(options)
 
-          this.props.updateFilter('bounds', bounds);
           // this.props.updateFilter('mapOptions', options);
 
         }
@@ -232,7 +231,6 @@ import MarkerManager from '../util/marker_manager';
     }
 
     _handleMarkerClick(marker, house){
-
       let infoWindow = new google.maps.InfoWindow();
       let options = {
         lat: house.lat,
@@ -245,7 +243,7 @@ import MarkerManager from '../util/marker_manager';
         this.props.router.push("houses/" + house.id );
       }
       let html =  '<div id="iw-container">' +
-                    '<div class="iw-title">Price: ' + house.price + '</div>' +
+                    '<div class="iw-title">Price: $' + house.current_price + '</div>' +
                     '<div class="iw-title"><a href="#/houses/' + house.id + '">More Details</a> </div>' +
                     '</div>'
                   //   <p className="house-index-item-details-minor">
@@ -272,4 +270,4 @@ import MarkerManager from '../util/marker_manager';
     }
   };
 
-  export default withRouter(HouseMap);
+  export default HouseMap;

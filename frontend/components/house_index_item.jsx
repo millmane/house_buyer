@@ -11,17 +11,28 @@ import ReactDOM from 'react-dom'
 class HouseIndexItem extends React.Component{
 	constructor(props){
 		super(props)
+		this.state = {
+			marker: this.props.marker
+		}
 		this.handleClick = this.handleClick.bind(this)
 		this.onMouseEnter = this.onMouseEnter.bind(this)
 		this.onMouseLeave = this.onMouseLeave.bind(this)
+		this.findWithAttr = this.findWithAttr.bind(this)
+
 	}
+
 
 	componentDidUpdate(){
 		// console.log(this.props.marker);
+	}
+
+	componentWillReceiveProps(nextProps){
+		this.setState({marker: nextProps.marker})
 
 	}
 
 	componentDidMount(){
+
 		// console.log(this);
 		// console.log(ReactDOM.findDOMNode(this));
 	}
@@ -31,22 +42,34 @@ class HouseIndexItem extends React.Component{
 	}
 
 	onMouseEnter(){
-		if(!!this.props.marker) {
-			this.props.marker.setIcon("images/green-dot.png")
-			this.props.marker.setAnimation(google.maps.Animation.BOUNCE);
+		if(!!this.props.markers) {
+			let markerIdx = this.findWithAttr(this.props.markers, 'houseId', this.props.house.id)
+			this.props.markers[markerIdx].setIcon("images/green-dot.png")
+			this.props.markers[markerIdx].setAnimation(google.maps.Animation.BOUNCE);
 		}
 	}
 
 	onMouseLeave(){
-		if(!!this.props.marker) {
-			this.props.marker.setIcon("images/red-dot.png")
-			this.props.marker.setAnimation(-1);
+			if(!!this.props.markers) {
+	    let markerIdx = this.findWithAttr(this.props.markers, 'houseId', this.props.house.id)
+			this.props.markers[markerIdx].setIcon("images/red-dot.png")
+			this.props.markers[markerIdx].setAnimation(-1);
 		}
+	}
+
+	findWithAttr(array, attr, value) {
+			for(var i = 0; i < array.length; i += 1) {
+					if(array[i][attr] === value) {
+							return i;
+					}
+			}
+			return -1;
 	}
 
 
 	render(){
 		const house = this.props.house
+		// console.log(this.props.marker);
 		return(
 			<div className="house-index-item-container col-sm-12 row-space-2 col-md-6"
 				onMouseEnter={this.onMouseEnter}
@@ -56,7 +79,7 @@ class HouseIndexItem extends React.Component{
 				</div>
 				<div className="house-index-item-caption">
 					<p className="house-index-item-details">
-						<span className="house-index-item-price">Price: ${house.price} </span>
+						<span className="house-index-item-price">Price: ${house.current_price} </span>
 					</p>
 					<p className="house-index-item-details-minor">
 						<span><Link to={`/houses/${house.id}`} activeClassName="current">Details </Link></span>

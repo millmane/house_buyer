@@ -8,6 +8,7 @@ import HouseMap from './house_map';
 import FilterForm from './filter_form';
 import FilterBar from './filter_bar';
 import Footer from './footer';
+import MarkerManager from '../util/marker_manager';
 
 //
 // class Search extends React.Component {
@@ -30,18 +31,15 @@ class Search extends React.Component{
 
   constructor(props){
     super(props)
-    // this.options = {
-    //   center: {
-    //     lat: props.lat,
-    //     lng: props.lng
-    //   },
-    //   zoom: 13
-    // };
-
+    this.markers = []
+    this.markerIdx = []
     this.onMouseOver = this.onMouseOver.bind(this);
     this.markerSaver = this.markerSaver.bind(this);
+    this.findWithAttr = this.findWithAttr.bind(this);
+
     this.state = {
-      markers: 0
+      markers: [],
+      markerInx: []
     }
   }
 
@@ -54,14 +52,57 @@ class Search extends React.Component{
     this.mm = marker
     if(!!this.mm.markers[0]) {
       // this.mm.markers[0].setIcon("http://labs.google.com/ridefinder/images/mm_20_green.png")
-      this.state.markers=this.mm.markers
+      // this.state.markers=this.mm.markers
+      // this.setState({markers: this.mm.markers})
       // console.log(this.state);
     }
 
   }
 
+  findWithAttr(array, attr, value) {
+      for(var i = 0; i < array.length; i += 1) {
+          if(array[i][attr] === value) {
+              return i;
+          }
+      }
+      return -1;
+  }
+
+  componentWillReceiveProps(nextProps){
+    // console.log(nextProps);
+
+    // this.setState({markers2: this.refs.housemap.MarkerManager.markers})
+  }
+
   componentDidUpdate(){
-    // console.log(this.refs);
+    this.markerIdx = []
+    this.markers = this.refs.housemap.MarkerManager.markers
+    this.markerManager = this.refs.housemap.MarkerManager
+    this.houseMap = this.refs.housemap
+    // console.log(this.markers);
+    // const houseIds = Object.keys(this.props.houses)
+    // if(this.markers.length > 0) {
+    //   houseIds.forEach((id) => {
+    //     // console.log(this.findWithAttr(this.markers, 'houseId', id));
+    //     this.markerIdx.push(this.findWithAttr(this.markers, 'houseId', +id))
+    //   })
+    // }
+    // console.log(this.markerIdx);
+
+
+    // this.markerIdx = this.findWithAttr(markers, 'houseId', houses[houseKeys[i]].id)
+
+    // if (this.refs.housemap.MarkerManager.markers.length > 0) {
+    //   this.refs.housemap.MarkerManager.markers.forEach((marker) => {
+    //     markerIdx.push(marker.houseId);
+    //   })
+    // }
+    // console.log(markerIdx);
+    // this.markers = this.refs.housemap.MarkerManager.markers
+    // console.log(this.markers);
+    // console.log(this.refs.search2.children);
+    // console.log("end update");
+
   }
 
   onMouseOver(){
@@ -72,9 +113,7 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-        this.props.requestHouses();
-
-    // console.log(this.refs);
+        // this.props.requestHouses();
     // console.log(this.refs.housemap);
     // console.log(this.refs.search);
     // console.log(this.refs.housemap1.test);
@@ -138,10 +177,13 @@ class Search extends React.Component{
             ref="houseindex"
             houses={this.props.houses}
             updateFilter={this.props.updateFilter}
-            markers={this.state.markers}/>
+            markers={this.props.markers}
+            markerManager={this.markerManager}
+            houseMap={this.houseMap}
+            />
           <Footer/>
         </div>
-        <div className="house-search-map" ref="search2">
+        <div className="house-search-map">
           <HouseMap
             markerSaver={this.markerSaver}
             ref="housemap"
@@ -150,6 +192,7 @@ class Search extends React.Component{
             updateFilter={this.props.updateFilter}
             singleHouse={false}
             updateMapOptions={this.props.updateMapOptions}
+            receiveMarkers={this.props.receiveMarkers}
             />
         </div>
       </div>

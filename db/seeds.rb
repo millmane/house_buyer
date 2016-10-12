@@ -49,7 +49,7 @@ def randomPriceData()
       change_percent -= (2 * volatility)
     end
     change_amount = old_price * change_percent
-    new_price = (old_price + change_amount).round(2)
+    new_price = (old_price + change_amount).round(0)
     old_price = new_price
     data << new_price
   end

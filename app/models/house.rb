@@ -1,4 +1,7 @@
 class House < ActiveRecord::Base
+
+  attr_accessor :ph
+
   validates :description, :lat, :lng, presence: true
 
   belongs_to :user
@@ -12,11 +15,20 @@ class House < ActiveRecord::Base
   end
 
   def price_history
-    self.prices.sort { |x,y| x.date <=> y.date}
+    @price_history ||= self.prices.sort { |x,y| x.date <=> y.date}
+
+    # self.ph = self.prices.sort { |x,y| x.date <=> y.date}
+    # return self.ph
+    # self.tester = price_history
   end
 
   def current_price
-    price_history.last.price
+    @current_price ||= self.prices.max {|a,b| a.date <=> b.date }.price
+
+    # price_history.last.price
+    # self.prices.max {|a,b| a.date <=> b.date }.price
+
+    # @price_history.last.price
   end
 
 end

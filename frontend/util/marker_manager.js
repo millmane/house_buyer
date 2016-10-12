@@ -1,7 +1,8 @@
 export default class MarkerManager {
-  constructor(map, handleClick){
+  constructor(map, handleClick, receiveMarkers){
     this.map = map;
     this.handleClick = handleClick;
+    this.receiveMarkers = receiveMarkers
     this.markers = [];
     this._createMarkerFromHouse = this._createMarkerFromHouse.bind(this);
     this._removeMarker = this._removeMarker.bind(this);
@@ -11,6 +12,9 @@ export default class MarkerManager {
     this.houses = houses;
     this._housesToAdd().forEach(this._createMarkerFromHouse);
     this._markersToRemove().forEach(this._removeMarker);
+    if (this.receiveMarkers) {
+      this.receiveMarkers(this.markers)
+    }
   }
 
   _housesToAdd(){
