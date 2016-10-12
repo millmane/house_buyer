@@ -46,7 +46,7 @@ def randomPriceData()
     rnd = rand(0..1.0)
     change_percent = 2 * volatility * rnd
     if (change_percent > volatility) then
-      change_percent -= (2 * volatility)
+      change_percent -= (2  * volatility)
     end
     change_amount = old_price * change_percent
     new_price = (old_price + change_amount).round(0)
@@ -69,24 +69,39 @@ end
     price: p,
     house_id: i + 1
     )
+  if (j == 0)
+    House.create!(
+      # description: "House#{i}",
+      description: Faker::Lorem.paragraph(4, false, 4),
+      lat: rand(37.735050..37.782629),
+      lng: rand(-122.509815..-122.390710),
+      price: p,
+      picture_url: picture_urls[i],
+      user_id: 1,
+      beds: rand(1..10),
+      baths: rand(1..10),
+      area: rand(1000..10000)
+    )
+  end
+
   end
 end
 
 
-(0...picture_urls.length).each do |i|
-  House.create!(
-    # description: "House#{i}",
-    description: Faker::Lorem.paragraph(4, false, 4),
-    lat: rand(37.735050..37.782629),
-    lng: rand(-122.509815..-122.390710),
-    price: rand(1000..10000),
-    picture_url: picture_urls[i],
-    user_id: 1,
-    beds: rand(1..10),
-    baths: rand(1..10),
-    area: rand(1000..10000)
-  )
-end
+# (0...picture_urls.length).each do |i|
+#   House.create!(
+#     # description: "House#{i}",
+#     description: Faker::Lorem.paragraph(4, false, 4),
+#     lat: rand(37.735050..37.782629),
+#     lng: rand(-122.509815..-122.390710),
+#     price: rand(1000..10000),
+#     picture_url: picture_urls[i],
+#     user_id: 1,
+#     beds: rand(1..10),
+#     baths: rand(1..10),
+#     area: rand(1000..10000)
+#   )
+# end
 # lat37.782629, 37.735050
 # lng  -122.509815, -122.390710
 # House.create!(

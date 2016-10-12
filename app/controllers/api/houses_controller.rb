@@ -20,9 +20,9 @@ class Api::HousesController < ApplicationController
       houses = houses.where(:area => [area_range, nil])
     end
     @houses = houses
-    @houses.each do |house|
-      house.current_price
-    end
+    # @houses.each do |house|
+    #   house.current_price
+    # end
 
     render :index
   end
@@ -35,6 +35,7 @@ class Api::HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @price_history = @house.price_history
+    @current_price = @house.current_price
     render :show
   end
 
